@@ -1,0 +1,9 @@
+sudo: required
+services:
+ - docker
+
+before install:
+ - docker build -t HarshMota99/Docker-React -f dockerfile.dev .
+
+script:
+ - docker run HarshMota99/Docker-React npm run test -- --coverage
